@@ -1,16 +1,19 @@
 {% extends "base.html" %} {% block title %}Shelf List{% endblock %} {% block content
     %}
-   <form method="GET">
+   
     <ul class="list-group list-group-flush" id="notes">
       {% for shelf in user.shelves %}
+      {% set name = shelf.name %}
       <li class="list-group-item">
-        {% set name = shelf.name -%}
-        <button type="submit" class="btn btn-primary" name='shelf' value='shelf_id'>{{name}}</button>
+        
+        <form method="POST">
+          <button type="submit" class="btn btn-primary" name='select-shelf' value='shelf_id'>{{name}}</button>
         <!-- <button type="button" class="btn btn-primary" onClick="goToShelf({{ shelf.id }})">{{ shelf.name }}</button> -->
+      </form>
       </li>
       {% endfor %}
     </ul>
-   </form>
+  
     
     <form method="POST">
         <label for="Name">Name</label>
@@ -29,6 +32,6 @@
             name="Category"
             placeholder="Enter category"
         />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" name='Test' class="btn btn-primary">Submit</button>
     </form>
     {% endblock %}

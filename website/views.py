@@ -11,26 +11,41 @@ views = Blueprint('views', __name__)
 @login_required
 def shelf_list():
     if request.method == 'POST':
-        shelf_name = request.form.get('Name')
-        shelf_cat = request.form.get('Category')
-        new_shelf = Shelf(name=shelf_name, category=shelf_cat, user_ID = current_user.id)
-        db.session.add(new_shelf)
-        db.session.commit()
-        flash('Note added!', category='success')
-
-    elif request.method == 'GET':
-        shelf_id = request.form.get('shelf')
-        # s = db.select(shelf, shelf_id)
-        s = db.select(shelf).where(shelf.c.id == shelf_id)
-
-        sql = 'select * from shelf where id = ?'
-       
-        print("Reading single row \n")
-        chosen_shelf = db.execute(s)
-        return render_template("shelf.html", user=current_user, shelf=chosen_shelf)
+        if 'Test' in request.form:
+            shelf_name = request.form.get('Name')
+            shelf_cat = request.form.get('Category')
+            new_shelf = Shelf(name=shelf_name, category=shelf_cat, user_ID = current_user.id)
+            db.session.add(new_shelf)
+            db.session.commit()
+            flash('Note added!', category='success')
+        else:
+            shelf_id = request.form.get('shelf')
+            # s = db.select(shelf, shelf_id)
+            # s = db.select(shelf).where(shelf.c.id == shelf_id)
+            s = Shelf.query.get(shelf_id)
+            # sql = 'select * from shelf where id = ?'
+            flash('working!', category='success')
+            print("Reading single row \n")
+            # chosen_shelf = db.execute(s)
+            return render_template("shelf.html", user=current_user, shelf=s)
 
     return render_template("shelf_list.html", user=current_user)
-    
+
+@views.route('/shelf', methods=['GET','POST'])
+@login_required
+def shelf():
+    if request.method == 'POST':
+        shelf_id = request.form.get('shelf')
+        # s = db.select(shelf, shelf_id)
+        # s = db.select(shelf).where(shelf.c.id == shelf_id)
+        s = Shelf.query.get(shelf_id)
+        # sql = 'select * from shelf where id = ?'
+       
+        print("Reading single row \n")
+        # chosen_shelf = db.execute(s)
+        return render_template("shelf.html", user=current_user, shelf=s)
+
+  
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
