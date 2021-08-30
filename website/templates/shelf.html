@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %} Shelf {% endblock %} {% block content 
     %}
     <ul class="list-group list-group-flush" id="notes">
-        {% for item in shelf_items.items %}
+        {% for item in shelf.items %}
         <li class="list-group-item">
           {{ item.title, item.creator ,item.Release_Year}}
           <!-- <button type="button" class="close" onClick="deleteNote({{ note.id }})">

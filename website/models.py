@@ -16,7 +16,7 @@ class Shelf(db.Model):
     added_date = db.Column(db.DateTime(timezone=True), default=func.now())
     category = name = db.Column(db.String(10000))
     items = db.relationship('Item')
-    user_ID = db.Column(db.Integer, db.ForeignKey('User.id'))
+    user_ID = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 # class ShelfList(db.Model):
 #     child_id = db.Column(db.Integer, primary_key=True)
@@ -25,7 +25,7 @@ class Shelf(db.Model):
 
 class Item(db.Model):
     id       = db.Column(db.Integer, primary_key=True)
-    shelf_id = db.Column(db.Integer, db.ForeignKey('Shelf.id'))
+    shelf_id = db.Column(db.Integer, db.ForeignKey('shelf.id'))
     title     = db.Column(db.String(10000))
     release_year = db.Column(db.Integer, default='2000')
     creator = db.Column(db.String(10000))
