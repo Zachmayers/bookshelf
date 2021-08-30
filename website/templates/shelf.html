@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %} Shelf {% endblock %} {% block content 
+    %}
+    <ul class="list-group list-group-flush" id="notes">
+        {% for item in shelf_items.items %}
+        <li class="list-group-item">
+          {{ item.title, item.creator ,item.Release_Year}}
+          <!-- <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </li>
+        {% endfor %}
+      </ul>
+      <form method="POST">
+        <label for="Title">Title</label>
+        <input
+            type="Title"
+            class="form-control"
+            id="Title"
+            name="Title"
+            placeholder="Enter title please! uwu"
+        />
+        <label for="Release_Year">Release_Year</label>
+        <input
+            type="number"
+            value="2000"
+            min = "1900"
+            max="2099"
+            step="1"
+            class="form-control"
+            id="Release_Year"
+            name="Release_Year"
+        />
+        <label for="Creator">Creator</label>
+        <input
+            type="Creator"
+            class="form-control"
+            id="Creator"
+            name="Creator"
+            placeholder="Enter name"
+        />
+      </form>
+      {% endblock %}
