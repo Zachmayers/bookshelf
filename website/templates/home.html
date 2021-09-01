@@ -11,6 +11,54 @@
       </li>
       {% endfor %}
     </ul>
+
+    <!-- I'm gonna start working down here on body stuff -->
+
+    <h1>Welcome to <em>Bookshelf</em>!</h1>
+    <h3>Keep track of your <em>baseball cards</em></h3>
+    <!-- Where it says "baseball cards" I want to have it fade in and out and change from example to example with css keyframes -->
+
+    {% if user.is_authenticated %}
+          <!-- Show three recommended shelves. Maybe last three edited? -->
+          <!-- Also I'm 100% certain there's a more reasonable way to do this than just repeating the code but I don't know how to do it -->
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-default" id="rec_1">
+                <div class="panel-heading"><em>CDs</em></div>
+                <div class="panel-body">
+                  <img src="/images/icon_cd.png">
+                  <p>There will be some image here either like a default or one set by the user.</p>
+                  <button type="button" class="btn btn-primary">Browse</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default" id="rec_1">
+                <div class="panel-heading"><em>Fiction Books</em></div>
+                <div class="panel-body">
+                  <img src="/images/icon_fiction_book.png">
+                  <p>There will be some image here either like a default or one set by the user.</p>
+                  <button type="button" class="btn btn-primary">Browse</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="panel panel-default" id="rec_1">
+                <div class="panel-heading"><em>Yu-Gi-Oh! Cards</em></div>
+                <div class="panel-body">
+                  <img src="/images/icon_yugioh.png">
+                  <p>There will be some image here either like a default or one set by the user.</p>
+                  <button type="button" class="btn btn-primary">Browse</button>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          {% else %}
+          <h2 class="text-center">Bookshelf is a customizable collection tracker that lets you catalog whatever you collect in whatever way works for you. Add shelves for whatever you want to track, choose what attributes you want to know about each item, and easily add new pieces to your collections.</h2>
+          <button type="button" id="signUpButton" href="/sign-up">Sign up now!</button>
+          {% endif %}
+
     <form method="POST">
       <textarea name="note" id="note" class="form-control"></textarea>
       <br />
@@ -19,3 +67,5 @@
       </div>
     </form>
     {% endblock %}
+
+    

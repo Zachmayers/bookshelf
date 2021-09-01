@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block title %} Shelf {% endblock %} {% block content 
     %}
+    <h1>{{ shelf }}dog</h1>
     <ul class="list-group list-group-flush" id="notes">
+      
         {% for item in shelf.items %}
         <li class="list-group-item">
           {{ item.title, item.creator ,item.Release_Year}}
@@ -38,5 +40,6 @@
             name="Creator"
             placeholder="Enter name"
         />
+        <button type="submit" name='add-item' class="btn btn-primary">Place on shelf</button>
       </form>
       {% endblock %}
