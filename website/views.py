@@ -35,21 +35,24 @@ def shelf_list():
             new_shelf = Shelf(name=shelf_name, category=shelf_cat, user_ID = current_user.id)
             db.session.add(new_shelf)
             db.session.commit()
-            flash('Note added!', category='success')
+
+            flash(shelf_name, category='success')
         else:
 
-            shelf_id = request.form.get('shelf')
-            s = db.select(shelf, int(shelf_id))
+            shelf_id = request.form.get('select-shelf')
+            print(shelf_id)
+            
             # s = db.select(shelf).where(shelf.c.id == int(shelf_id))
-            # s = Shelf.query.get(shelf_id)
+            s = Shelf.query.get(shelf_id)
+            print(s.name)
             # sql = 'select * from shelf where id = ?'
             # cur = db.cursor()
             # cur.execute(sql, shelf_id)
             # s = cur.fetchone()
             flash('working!', category='success')
-            chosen_shelf = conn.execute(s)
-            print(chosen_shelf.name)
-            return render_template("shelf.html", user=current_user, shelf=chosen_shelf)
+            # chosen_shelf = conn.execute(s)
+            # print(chosen_shelf.name)
+            return render_template("shelf.html", user=current_user, shelf=s)
 
     return render_template("shelf_list.html", user=current_user)
 

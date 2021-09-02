@@ -3,11 +3,11 @@
    
     <ul class="list-group list-group-flush" id="notes">
       {% for shelf in user.shelves %}
-      {% set name = shelf.name %}
+
       <li class="list-group-item">
         
         <form method="POST">
-          <button type="submit" class="btn btn-primary" name='select-shelf' value='shelf_id'>{{name}}</button>
+          <button type="submit" class="btn btn-primary" name='select-shelf' value={{shelf.id}}>{{shelf.name}}</button>
         <!-- <button type="button" class="btn btn-primary" onClick="goToShelf({{ shelf.id }})">{{ shelf.name }}</button> -->
       </form>
       </li>

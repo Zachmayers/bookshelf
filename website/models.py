@@ -18,6 +18,9 @@ class Shelf(db.Model):
     items = db.relationship('Item')
     user_ID = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+    def __repr__(self):
+        return '<Name %r>' % self.name
+
 # class ShelfList(db.Model):
 #     child_id = db.Column(db.Integer, primary_key=True)
 #     parent_id = db.Column(db.Integer, db.ForeignKey('Shelf.id'))
