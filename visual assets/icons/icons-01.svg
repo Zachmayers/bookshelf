@@ -1,0 +1,18 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #873223;
+        stroke: #cd9a48;
+        stroke-miterlimit: 10;
+        stroke-width: 18px;
+      }
+
+      .cls-2 {
+        fill: #151515;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="200" y="100" width="300" height="500" rx="10.5"/>
+  <ellipse class="cls-2" cx="350" cy="350" rx="59.15" ry="113.67"/>
+</svg>
