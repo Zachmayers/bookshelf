@@ -1,42 +1,78 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+{% extends "base.html" %} {% block title %}Test{% endblock %} {% block content
     %}
+    <!-- <div class="container-fluid">
+      <div class="container">
+        <h1 class="display-3 text-center" style="margin: 3;">Welcome back to your <b style="color: #B83B3B">Bookshelf!</b></h1>
+      </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header" style="background-color: #bb5d06;">
+              <h3 class="text-center" style="color: #dddddd"><b></b>Cassettes</b></h3>
+            </div>
+            <img class="card-img-top" src="/static/icons/icon_cassette_prerec.svg">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">You have <b>26</b> items on this shelf.</h6>
+              <p class="card-text">When records aren't esoteric enough for you, but digital music is just way too convenient, there's the trusty audio cassette. Pop your favorite tape into your hi-fi deck, Walkman, or 1997 Honda Accord, and listen to some rockin' chromium-dioxide tunes.</p>
+              <a href="#" class="btn btn-primary">Browse Shelf</a>
+            </div>
+          </div>
         </div>
-      </nav>
-
-<div class="container">
-    <div class="row">
-        
-    </div>
-</div>
-
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header" style="background-color: #ac1e49;">
+              <h3 class="text-center" style="color: #dddddd"><b>LP Records</b></h3>
+            </div>
+            <img class="card-img-top" src="/static/icons/icon_lp.svg">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">You have <b>17</b> items on this shelf.</h6>
+              <p class="card-text">The once-humble 12-inch long-play phonographic record has been risen from its grave. Beloved for its fully-analog signal path, beautiful album art, and vintage charm, this format is in the midst of a collector-driven revival. Just don't call them "vinyls."</p>
+              <a href="#" class="btn btn-primary">Browse Shelf</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-header" style="background-color: #326ab4;">
+              <h3 class="text-center" style="color: #dddddd"><b>Blu-Ray Movies</b></h3>
+            </div>
+            <img class="card-img-top" src="/static/icons/icon_bluray_movie.svg">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">You have <b>58</b> items on this shelf.</h6>
+              <p class="card-text">The history of home video media is full of format wars, victors and obsolescence. The last format war was won by the trusty Blu-Ray Disc, with its high storage density, namesake blue-violet laser diode, and 1080p HD resolution. Reliable, quality, scalable, Blu-Ray may be the last great home media format.</p>
+              <a href="#" class="btn btn-primary">Browse Shelf</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- This is gonna be a sample of a shelf page. -->
+    <table class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Year</th>
+          <th scope="col">Runtime</th>
+          <th scope="col">Director</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr>
+          <th scope="row">1</th>
+          <td><em>Apollo 13</em></td>
+          <td>1995</td>
+          <td>140 mins.</td>
+          <td>Ron Howard</td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td><em>Apollo 13</em></td>
+          <td>1995</td>
+          <td>140 mins.</td>
+          <td>Ron Howard</td>
+        </tr>
+      </tbody>
+    </table>
 {% endblock %}

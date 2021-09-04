@@ -71,6 +71,10 @@ def shelf():
         # chosen_shelf = db.execute(s)
         return render_template("shelf.html", user=current_user, shelf=s)
 
+@views.route('/test', methods=['GET','POST'])
+@login_required
+def test():
+    return render_template("test.html", user=current_user)
   
 @views.route('/delete-note', methods=['POST'])
 def delete_note():

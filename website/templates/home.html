@@ -14,58 +14,51 @@
 
     <!-- I'm gonna start working down here on body stuff -->
 
-    <h1>Welcome to <em>Bookshelf</em>!</h1>
-    <h3>Keep track of your <em>baseball cards</em></h3>
-    <!-- Where it says "baseball cards" I want to have it fade in and out and change from example to example with css keyframes -->
+    <div class="container">
+      <h1 class="display-3 text-center mt-5 mb-5">Welcome back to your <b style="color: #B83B3B">Bookshelf!</b></h1>
+    </div>
 
-    {% if user.is_authenticated %}
-          <!-- Show three recommended shelves. Maybe last three edited? -->
-          <!-- Also I'm 100% certain there's a more reasonable way to do this than just repeating the code but I don't know how to do it -->
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="panel panel-default" id="rec_1">
-                <div class="panel-heading"><em>CDs</em></div>
-                <div class="panel-body">
-                  <img src="/images/icon_cd.png">
-                  <p>There will be some image here either like a default or one set by the user.</p>
-                  <button type="button" class="btn btn-primary">Browse</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-default" id="rec_1">
-                <div class="panel-heading"><em>Fiction Books</em></div>
-                <div class="panel-body">
-                  <img src="/images/icon_fiction_book.png">
-                  <p>There will be some image here either like a default or one set by the user.</p>
-                  <button type="button" class="btn btn-primary">Browse</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="panel panel-default" id="rec_1">
-                <div class="panel-heading"><em>Yu-Gi-Oh! Cards</em></div>
-                <div class="panel-body">
-                  <img src="/images/icon_yugioh.png">
-                  <p>There will be some image here either like a default or one set by the user.</p>
-                  <button type="button" class="btn btn-primary">Browse</button>
-                </div>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header" style="background-color: #bb5d06;">
+            <h3 class="text-center" style="color: #dddddd"><b>Cassettes</b></h3>
           </div>
-       
-          {% else %}
-          <h2 class="text-center">Bookshelf is a customizable collection tracker that lets you catalog whatever you collect in whatever way works for you. Add shelves for whatever you want to track, choose what attributes you want to know about each item, and easily add new pieces to your collections.</h2>
-          <button type="button" id="signUpButton" href="/sign-up">Sign up now!</button>
-          {% endif %}
-
-    <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
-      <br />
-      <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+          <img class="card-img-top" src="/static/icons/icon_cassette_prerec.svg">
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">You have <b>26</b> items on this shelf.</h6>
+            <p class="card-text">When records aren't esoteric enough for you, but digital music is just way too convenient, there's the trusty audio cassette. Pop your favorite tape into your hi-fi deck, Walkman, or 1997 Honda Accord, and listen to some rockin' chromium-dioxide tunes.</p>
+            <a href="#" class="btn btn-primary">Browse Shelf</a>
+          </div>
+        </div>
       </div>
-    </form>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header" style="background-color: #ac1e49;">
+            <h3 class="text-center" style="color: #dddddd"><b>LP Records</b></h3>
+          </div>
+          <img class="card-img-top" src="/static/icons/icon_lp.svg">
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">You have <b>17</b> items on this shelf.</h6>
+            <p class="card-text">The once-humble 12-inch long-play phonographic record has been risen from its grave. Beloved for its fully-analog signal path, beautiful album art, and vintage charm, this format is in the midst of a collector-driven revival. Just don't call them "vinyls."</p>
+            <a href="#" class="btn btn-primary">Browse Shelf</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-header" style="background-color: #326ab4;">
+            <h3 class="text-center" style="color: #dddddd"><b>Blu-Ray Movies</b></h3>
+          </div>
+          <img class="card-img-top" src="/static/icons/icon_bluray_movie.svg">
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">You have <b>58</b> items on this shelf.</h6>
+            <p class="card-text">The history of home video media is full of format wars, victors and obsolescence. The last format war was won by the trusty Blu-Ray Disc, with its high storage density, namesake blue-violet laser diode, and 1080p HD resolution. Reliable, quality, scalable, Blu-Ray may be the last great home media format.</p>
+            <a href="#" class="btn btn-primary">Browse Shelf</a>
+          </div>
+        </div>
+      </div>
+    </div>
     {% endblock %}
 
     
